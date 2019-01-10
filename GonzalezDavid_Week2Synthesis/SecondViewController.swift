@@ -12,7 +12,8 @@ class SecondViewController: UIViewController {
 
     @IBOutlet weak var continentName: UILabel!
     @IBOutlet weak var continentInfo: UILabel!
-    
+    var countryArray: [String] = []
+    var countryTuple: (country: String, population: String) = ("", "")
     
     override func viewDidLoad() {
         super.viewDidLoad()

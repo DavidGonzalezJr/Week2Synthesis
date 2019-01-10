@@ -11,11 +11,14 @@ import UIKit
 class ThirdViewController: UIViewController {
     @IBOutlet weak var countryName: UITextField!
     @IBOutlet weak var countryPopulation: UITextField!
-    
+    var countryTuple: (country: String, population: String) = ("", "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        countryName.text = countryTuple.country
+        countryPopulation.text = countryTuple.population
+        
         // Do any additional setup after loading the view.
     }
 
@@ -24,7 +27,12 @@ class ThirdViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if countryName.text == "" || countryPopulation.text == "" {
+            return false
+        }
+        return true
+    }
     
 
     /*
