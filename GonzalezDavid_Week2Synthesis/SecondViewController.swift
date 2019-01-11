@@ -11,7 +11,7 @@ import UIKit
 class SecondViewController: UIViewController {
 
     @IBOutlet weak var continentName: UILabel!
-    @IBOutlet weak var continentInfo: UILabel!
+    @IBOutlet weak var continentInfo: UITextView!
     var countryArray: [String] = []
     var countryTuple: (country: String, population: String) = ("", "")
     var continent: String = ""
@@ -31,7 +31,27 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func goToThird(_ sender: UIButton, forEvent event: UIEvent) {
+        performSegue(withIdentifier: "toThirdViewController", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let viewController = segue.destination as! ThirdViewController
+        viewController.countryTuple = self.countryTuple
+    }
+    
     @IBAction func saveCountryPop(segue: UIStoryboardSegue) {
+        let viewController = segue.source as! ThirdViewController
+        let countryNameString: String = viewController.countryName.text ?? "John"
+        let countryPopulationString: String = viewController.countryPopulation.text ?? "Smith"
+        countryArray += ["\(countryNameString) \(countryPopulationString)"]
+        countryTuple = (countryNameString, countryPopulationString)
+        var newCountryString: String = ""
+        
+        for countryPop in countryArray {
+            newCountryString += "\(countryPop)\n"
+        }
+        continentInfo.text = newCountryString
     }
     
     /*

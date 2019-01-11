@@ -94,45 +94,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONTINENT NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tI-55-M19">
-                                <rect key="frame" x="113" y="115" width="148" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONTINENT NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tI-55-M19">
+                                <rect key="frame" x="113" y="115" width="149" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yft-YP-Krz">
-                                <rect key="frame" x="166" y="197" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kA-0E-mSC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kA-0E-mSC">
                                 <rect key="frame" x="269" y="20" width="90" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Country"/>
+                                <connections>
+                                    <action selector="goToThird:forEvent:" destination="qrV-cz-TGr" eventType="touchUpInside" id="3Bk-rz-B4Y"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuN-Dy-4gQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuN-Dy-4gQ">
                                 <rect key="frame" x="16" y="20" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="dismissViewController" destination="qrV-cz-TGr" eventType="touchUpInside" id="v0H-tW-mah"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GqC-G1-Gse">
+                                <rect key="frame" x="16" y="188" width="343" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9kA-0E-mSC" firstAttribute="baseline" secondItem="fuN-Dy-4gQ" secondAttribute="baseline" id="05A-pj-AHC"/>
+                            <constraint firstItem="GqC-G1-Gse" firstAttribute="top" secondItem="2tI-55-M19" secondAttribute="bottom" constant="52" id="8dH-d0-b8A"/>
+                            <constraint firstItem="2tI-55-M19" firstAttribute="leading" secondItem="9py-l5-VnJ" secondAttribute="leading" constant="113" id="X7W-Yu-UKt"/>
+                            <constraint firstItem="GqC-G1-Gse" firstAttribute="trailing" secondItem="9kA-0E-mSC" secondAttribute="trailing" id="XI7-rX-1BF"/>
+                            <constraint firstItem="2tI-55-M19" firstAttribute="centerX" secondItem="GqC-G1-Gse" secondAttribute="centerX" id="YCS-6i-Bah"/>
+                            <constraint firstItem="9py-l5-VnJ" firstAttribute="bottom" secondItem="GqC-G1-Gse" secondAttribute="bottom" constant="351" id="ZfE-R8-823"/>
+                            <constraint firstItem="GqC-G1-Gse" firstAttribute="leading" secondItem="Ugz-fl-ovm" secondAttribute="leadingMargin" id="bN0-tr-2Tq"/>
+                            <constraint firstItem="2tI-55-M19" firstAttribute="centerX" secondItem="Ugz-fl-ovm" secondAttribute="centerX" id="c2a-si-ncO"/>
+                            <constraint firstItem="GqC-G1-Gse" firstAttribute="leading" secondItem="fuN-Dy-4gQ" secondAttribute="leading" id="j5K-xH-KjQ"/>
+                            <constraint firstItem="2tI-55-M19" firstAttribute="top" secondItem="9py-l5-VnJ" secondAttribute="top" constant="95" id="jjS-4I-C0l"/>
+                            <constraint firstItem="9kA-0E-mSC" firstAttribute="top" secondItem="9py-l5-VnJ" secondAttribute="top" id="jtx-bc-PVy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9py-l5-VnJ"/>
                     </view>
                     <connections>
-                        <outlet property="continentInfo" destination="yft-YP-Krz" id="L5t-je-Xde"/>
+                        <outlet property="continentInfo" destination="GqC-G1-Gse" id="g4B-WO-sxM"/>
                         <outlet property="continentName" destination="2tI-55-M19" id="Am9-4r-fAr"/>
+                        <segue destination="s1N-W9-eB7" kind="show" identifier="toThirdViewController" id="yZP-Xu-j71"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qna-d3-9BF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="618" y="133"/>
+            <point key="canvasLocation" x="616.79999999999995" y="132.68365817091455"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="O4o-39-Uvv">
@@ -146,6 +159,9 @@
                                 <rect key="frame" x="16" y="20" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="dismissViewController" destination="s1N-W9-eB7" eventType="touchUpInside" id="Fmk-df-e40"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Country Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCA-RR-1Or">
                                 <rect key="frame" x="112" y="75" width="150" height="21"/>
@@ -159,7 +175,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Country Population" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbq-Vp-HQ2">
                                 <rect key="frame" x="94" y="214" width="186" height="21"/>
@@ -173,7 +189,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1e-P3-XLu">
                                 <rect key="frame" x="139" y="390" width="127" height="30"/>

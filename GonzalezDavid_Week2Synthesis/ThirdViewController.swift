@@ -34,6 +34,10 @@ class ThirdViewController: UIViewController {
         return true
     }
     
+    @IBAction func dismissViewController() {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
     /*
     // MARK: - Navigation
