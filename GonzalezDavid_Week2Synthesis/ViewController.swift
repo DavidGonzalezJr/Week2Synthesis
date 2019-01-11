@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     var countryTotal: Int = 0
     var populationTotal: Int = 0
+    var continent: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,23 +27,29 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let viewController = segue.destination as! SecondViewController
+        viewController.continent = self.continent
+    }
+    
     @IBAction func goToSecond(sender: UIButton) {
+        
         let tag = sender.tag
         switch tag{
         case 0:
-            
+            continent = "Africa"
         case 1:
-            
+            continent = "Asia"
         case 2:
-            
+            continent = "Australia"
         case 3:
-            
+            continent = "Europe"
         case 4:
-            
+            continent = "North America"
         case 5:
-            
+            continent = "South America"
         default:
-            print("Either Case 2 was tapped, or something really bad happened!")
+            print("Something really bad happened!")
         }
         performSegue(withIdentifier: "toSecondViewController", sender: sender)
     }

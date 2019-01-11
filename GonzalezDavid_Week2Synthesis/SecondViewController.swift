@@ -14,13 +14,18 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var continentInfo: UILabel!
     var countryArray: [String] = []
     var countryTuple: (country: String, population: String) = ("", "")
+    var continent: String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        continentName.text = continent
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func dismissViewController() {
+        dismiss(animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
